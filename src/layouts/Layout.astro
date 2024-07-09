@@ -1,7 +1,12 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
 	title: string;
 }
+
+import Footer  from "../components/Footer.astro";
+import Navbar  from "../components/Navbar.astro";
 
 const { title } = Astro.props;
 ---
@@ -14,15 +19,29 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
+		<Navbar />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
 <style is:global>
 	html{
 		background-color: ;
+		font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+	}
+
+	section{
+		min-height: 100svh;
 	}
 </style>

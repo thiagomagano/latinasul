@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const ano = '1993';
+const empresa= 'Latina Sul'
+---
+
+
+<Layout title="Quem Somos - Latina Sul">
+  <section class="container mx-auto py-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-4">Quem Somos</h1>
+      <p class="text-lg leading-relaxed mb-8">
+        Na {empresa}, somos apaixonados por entregar alimentos congelados da mais alta qualidade, 
+        diretamente para sua mesa. Nossa missão é facilitar a vida dos nossos clientes, oferecendo 
+        uma ampla variedade de carnes, aves, peixes e vegetais congelados, sempre frescos e saborosos.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-semibold mb-4">Nossos Valores</h2>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>Qualidade e Frescor em Primeiro Lugar</li>
+          <li>Compromisso com a Satisfação do Cliente</li>
+          <li>Sustentabilidade e Responsabilidade Social</li>
+          <li>Inovação Constante em Nossos Processos</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-semibold mb-4">Nossa História</h2>
+        <p class="text-gray-700">
+          Fundada em {ano}, a {empresa} começou como um pequeno negócio familiar, 
+          com o objetivo de levar praticidade e sabor para a vida das pessoas. Ao longo dos anos, 
+          crescemos e nos tornamos referência em distribuição de alimentos congelados, 
+          sempre mantendo nossos valores e a paixão pelo que fazemos.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+

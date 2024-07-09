@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const ano = '1993';
+const empresa= 'Latina Sul'
+---
+
+
+
+<Layout title='contato - Latina Sul'>
+
+<section class="container mx-auto py-12 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-4xl font-bold mb-4">Entre em Contato</h1>
+    <p class="text-lg leading-relaxed mb-8">
+      Estamos aqui para ajudar! Preencha o formulário abaixo, envie um e-mail ou ligue para nós.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-4">Formulário de Contato</h2>
+      <form>
+        <div class="mb-4">
+          <label for="nome" class="block text-gray-700 font-bold mb-2">Nome:</label>
+          <input type="text" id="nome" name="nome" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold mb-2">E-mail:</label>
+          <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+          <label for="mensagem" class="block text-gray-700 font-bold mb-2">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar</button>
+      </form>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-semibold mb-4">Outras Formas de Contato</h2>
+      <p class="mb-4"><i class="fas fa-phone mr-2"></i> (XX) XXXX-XXXX</p> 
+      <p class="mb-4"><i class="fas fa-envelope mr-2"></i> contato@suaempresa.com</p>
+      <div class="flex space-x-4">
+        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-blue-800 hover:text-blue-900"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+</Layout>
