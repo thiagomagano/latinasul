@@ -29,7 +29,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    {title !== "Home - Latina Sul" && <Navbar />}
+    {title === "Home - Latina Sul" && <Navbar />}
     <slot />
     <Footer />
     <style is:global>

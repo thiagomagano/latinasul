@@ -1,0 +1,14 @@
+---
+const { title, description, imageUrl } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-md p-6">
+  <img
+    src=`/produtos/${imageUrl}`
+    alt={title}
+    class="w-full h-48 object-cover rounded-t-lg"
+  />
+  <h2 class="text-xl font-semibold mb-2">{title}</h2>
+  <p class="text-gray-700 mb-4">{description}</p>
+  <button class="btn btn-primary"> Saiba Mais </button>
+</div>

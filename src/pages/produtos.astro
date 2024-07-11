@@ -1,5 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import CardProduto from "../components/CardProduto.astro";
+
+import { produtos } from "../data/produtos";
 ---
 
 <Layout title="Produtos - Latina Sul">
@@ -7,60 +10,25 @@ import Layout from "../layouts/Layout.astro"
     <h1 class="text-4xl font-bold text-center mb-8">Nossa Linha de Produtos</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/produtos/carne.png" alt="Produto 2" class="w-full h-48 object-cover rounded-t-lg">
-        <h2 class="text-xl font-semibold mb-2">Carne Bovina</h2>
-        <p class="text-gray-700 mb-4">Cortes de carne bovina de alta qualidade, para todos os gostos.</p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Saiba Mais
-        </button>
-      </div>
+      {
+        produtos.map((produto) => (
+          <CardProduto
+            title={produto.title}
+            description={produto.description}
+            imageUrl={produto.imageUrl}
+          />
+        ))
+      }
 
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/produtos/frango.png" alt="Produto 1" class="w-full h-48 object-cover rounded-t-lg">
-        <h2 class="text-xl font-semibold mb-2">Frango</h2>
-        <p class="text-gray-700 mb-4">Pedaços de frango selecionados, ideais para suas receitas.</p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Saiba Mais
-        </button>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/produtos/peixe.png" alt="Produto 3" class="w-full h-48 object-cover rounded-t-lg">
-        <h2 class="text-xl font-semibold mb-2">Peixe</h2>
-        <p class="text-gray-700 mb-4">Variedade de peixes congelados, práticos e saborosos.</p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Saiba Mais
-        </button>
-      </div>
-      
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/produtos/frango.png" alt="Produto 1" class="w-full h-48 object-cover rounded-t-lg">
-        <h2 class="text-xl font-semibold mb-2">Frango</h2>
-        <p class="text-gray-700 mb-4">Pedaços de frango selecionados, ideais para suas receitas.</p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Saiba Mais
-        </button>
-      </div>
-      
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/produtos/peixe.png" alt="Produto 3" class="w-full h-48 object-cover rounded-t-lg">
-        <h2 class="text-xl font-semibold mb-2">Peixe</h2>
-        <p class="text-gray-700 mb-4">Variedade de peixes congelados, práticos e saborosos.</p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Saiba Mais
-        </button>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/produtos/carne.png" alt="Produto 2" class="w-full h-48 object-cover rounded-t-lg">
-        <h2 class="text-xl font-semibold mb-2">Carne Bovina</h2>
-        <p class="text-gray-700 mb-4">Cortes de carne bovina de alta qualidade, para todos os gostos.</p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Saiba Mais
-        </button>
-      </div>
-      
-
-      </div>
+      {
+        produtos.map((produto) => (
+          <CardProduto
+            title={produto.title}
+            description={produto.description}
+            imageUrl={produto.imageUrl}
+          />
+        ))
+      }
+    </div>
   </section>
 </Layout>
