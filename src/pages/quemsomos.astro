@@ -7,7 +7,7 @@ const empresa = "Latina Sul";
 
 <Layout title="Quem Somos - Latina Sul">
   <section class="container mx-auto py-24 flex flex-col gap-24">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 place-items-center">
       <div class="bg-white flex flex-col gap-4 text-base">
         <div class="mb-4 -ml-2">
           <svg
@@ -103,7 +103,11 @@ const empresa = "Latina Sul";
         </p>
       </div>
 
-      <video class="h-full w-full rounded-lg" poster="/logo.jpg" controls>
+      <video
+        class="h-full w-full rounded-lg border border-slate-100 shadow-lg"
+        poster="/logo.jpg"
+        controls
+      >
         <source
           src="/video/video-institucional-latinasul.mp4"
           type="video/mp4"

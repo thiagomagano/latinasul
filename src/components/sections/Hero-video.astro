@@ -1,5 +1,20 @@
 ---
 import { fade } from "astro:transitions";
+import ProductIcons from "../ProductIcons.astro";
+
+interface produtos {
+  title: string;
+}
+
+const produtos = [
+  "Bovino",
+  "Frango",
+  "Ovino",
+  "Suino",
+  "Peixe",
+  "Vegetais",
+  "Laticinios",
+];
 ---
 
 <section
@@ -8,7 +23,7 @@ import { fade } from "astro:transitions";
   <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
     <video
       class="min-w-full min-h-full absolute object-cover"
-      src="/video/video-institucional-latinasul.mp4"
+      src="/video/capa-video-institucional-latinasul.mp4"
       autoplay
       muted
       loop></video>
@@ -24,6 +39,72 @@ import { fade } from "astro:transitions";
         class="w-[700px]"
       />
       <!-- <a class="btn btn-black mt-8" href="/produtos">Conheça Nossos Produtos</a> -->
+    </div>
+  </div>
+</section>
+
+<section class="bg-slate-100 w-full py-16">
+  <div class="grid grid-cols-4 text-primary font-medium container mx-auto">
+    <div class="flex flex-col items-center justify-center">
+      <img src="/svg/caminhao-icon.svg" alt="Caminhao Icon" class="size-16" />
+      <p class="max-w-[200px] text-center">
+        Entregamos seu pedido com frota própria
+      </p>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <img src="/svg/caminhao-icon.svg" alt="Caminhao Icon" class="size-16" />
+      <p class="max-w-[200px] text-center">
+        Trabalhamos com as melhores marcas
+      </p>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <img src="/svg/caminhao-icon.svg" alt="Caminhao Icon" class="size-16" />
+      <p class="max-w-[200px] text-center">
+        Entregamos seu pedido com frota própria
+      </p>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <img src="/svg/caminhao-icon.svg" alt="Caminhao Icon" class="size-16" />
+      <p class="max-w-[200px] text-center">
+        Entregamos seu pedido com frota própria
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="w-full py-16">
+  <div class="text-primary font-medium container mx-auto flex flex-col gap-8">
+    <h1 class="text-primary font-bold text-4xl">Produtos</h1>
+    <p>Produto de qualidade e Selecionados</p>
+
+    <div class="grid-cols-8 grid">
+      {produtos.map((produto) => <ProductIcons title={produto} />)}
+    </div>
+  </div>
+</section>
+
+<section class="bg-primary text-white py-24 relative z-50">
+  <div class="container mx-auto grid grid-cols-2 z-0">
+    <div>
+      <h2 class="text-4xl font-bold pb-24">Regiões atendidas</h2>
+      <p class="text-3xl max-w-md">
+        Atendemos mais de <span class="text-secondary font-semibold"
+          >100 municípios
+        </span> nas regiões da serra e metropolitana.
+      </p>
+    </div>
+
+    <div class="">
+      <img
+        src="/svg/mapa-rs.svg"
+        alt="Mapa do rio grande do sul"
+        class="w-[388px] z-0"
+      />
+      <img
+        src="/svg/caminhos.svg"
+        alt="caminhos"
+        class="absolute top-0 right-0 -z-50 w-[600px]"
+      />
     </div>
   </div>
 </section>

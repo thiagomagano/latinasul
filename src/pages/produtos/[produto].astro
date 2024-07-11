@@ -1,0 +1,31 @@
+---
+import CardProduto from "../../components/CardProduto.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { produto: "Carne" } },
+    { params: { produto: "Frango" } },
+    { params: { produto: "Peixe" } },
+  ];
+}
+
+const { produto } = Astro.params;
+---
+
+<Layout title={produto}>
+  <section>
+    <h2 class="text-4xl text-primary text-bold text-center">
+      Confira nossa lista de {produto}!
+    </h2>
+
+    <ol class="grid grid-cols-3">
+      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
+      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
+      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
+      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
+      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
+      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
+    </ol>
+  </section>
+</Layout>

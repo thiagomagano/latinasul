@@ -6,7 +6,7 @@ interface Produto {
 
 export const produtos: Array<Produto> = [
   {
-    title: "Carne Bovina",
+    title: "Carne",
     description:
       "Cortes de carne bovina de alta qualidade, para todos os gostos.",
     imageUrl: "carne.png",

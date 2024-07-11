@@ -1,0 +1,14 @@
+---
+const { title } = Astro.props;
+---
+
+<div class="card flex flex-col gap-10 px-16">
+  <div class="w-full flex items-center justify-center">
+    <img
+      src=`/svg/${title.toLowerCase()}.svg`
+      alt="Icone Bovino"
+      class="size-16"
+    />
+  </div>
+  <p class="card-title">{title}</p>
+</div>
