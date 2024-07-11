@@ -29,7 +29,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    {title !== "Home - Latina Sul" && <Navbar />}
+    <Navbar />
     <slot />
     <Footer />
     <style is:global>
@@ -39,10 +39,6 @@ const { title } = Astro.props;
         font-optical-sizing: auto;
         font-weight: <weight>;
         font-style: normal;
-      }
-
-      section {
-        min-height: 100svh;
       }
     </style>
   </body>
