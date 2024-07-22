@@ -1,0 +1,22 @@
+---
+import ProductIcons from "../ProductIcons.astro";
+import listaProdutos from "@data/produtos";
+---
+
+<section class="w-full py-16">
+  <div class="text-primary font-medium container mx-auto flex flex-col gap-8">
+    <h1 class="font-bold text-4xl">Produtos</h1>
+    <div class="flex justify-between">
+      <p>Produto de qualidade e Selecionados</p>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-4 overflow-x-auto">
+      {
+        listaProdutos.map((produto) => (
+          <ProductIcons title={produto.title} iconUrl={produto.iconUrl} />
+        ))
+      }
+    </div>
+    <a href="/produtos" class="underline"> Saiba mais </a>
+  </div>
+</section>

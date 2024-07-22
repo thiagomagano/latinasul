@@ -1,24 +1,49 @@
-interface Produto {
+import iconBovino from "@assets/svg/bovino.svg";
+import iconFrango from "@assets/svg/frango.svg";
+import iconOvino from "@assets/svg/ovino.svg";
+import iconSuino from "@assets/svg/suino.svg";
+import iconPeixe from "@assets/svg/peixe.svg";
+import iconVegetais from "@assets/svg/vegetais.svg";
+import iconLaticinios from "@assets/svg/laticinios.svg";
+
+interface produtos {
   title: string;
-  description: string;
-  imageUrl: string;
+  iconUrl: ImageMetadata;
 }
 
-export const produtos: Array<Produto> = [
+const listaProdutos: produtos[] = [
   {
-    title: "Carne",
-    description:
-      "Cortes de carne bovina de alta qualidade, para todos os gostos.",
-    imageUrl: "carne.png",
+    title: "Bovinos",
+    iconUrl: iconBovino,
   },
   {
-    title: "Frango",
-    description: "Pedaços de frango selecionados, ideais para suas receitas.",
-    imageUrl: "frango.png",
+    title: "Cordeiros",
+    iconUrl: iconOvino,
   },
   {
-    title: "Peixe",
-    description: "Variedade de peixes congelados, práticos e saborosos.",
-    imageUrl: "peixe.png",
+    title: "Suinos",
+    iconUrl: iconSuino,
+  },
+  {
+    title: "Industrializados",
+    iconUrl: iconFrango,
+  },
+  {
+    title: "Aves",
+    iconUrl: iconFrango,
+  },
+  {
+    title: "Peixes",
+    iconUrl: iconPeixe,
+  },
+  {
+    title: "Queijos",
+    iconUrl: iconLaticinios,
+  },
+  {
+    title: "Vegetais",
+    iconUrl: iconVegetais,
   },
 ];
+
+export default listaProdutos;

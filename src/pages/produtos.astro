@@ -2,30 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import CardProduto from "../components/CardProduto.astro";
 
-import { produtos } from "../data/produtos";
+import listaProdutos from "@data/produtos";
 ---
 
 <Layout title="Produtos - Latina Sul">
   <section class="container mx-auto py-12 px-6">
-    <h1 class="text-4xl font-bold text-center mb-8">Nossa Linha de Produtos</h1>
+    <h1 class="text-4xl font-bold text-center mb-8">Produtos</h1>
+    <p>Escolha uma categoria para visualizar os produtos</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-4 gap-5">
       {
-        produtos.map((produto) => (
+        listaProdutos.map((produto) => (
           <CardProduto
             title={produto.title}
-            description={produto.description}
-            imageUrl={produto.imageUrl}
-          />
-        ))
-      }
-
-      {
-        produtos.map((produto) => (
-          <CardProduto
-            title={produto.title}
-            description={produto.description}
-            imageUrl={produto.imageUrl}
+            iconUrl={produto.iconUrl}
+            description={produto.title}
           />
         ))
       }

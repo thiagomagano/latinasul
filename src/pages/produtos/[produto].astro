@@ -4,9 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 
 export function getStaticPaths() {
   return [
-    { params: { produto: "Carne" } },
-    { params: { produto: "Frango" } },
-    { params: { produto: "Peixe" } },
+    { params: { produto: "Bovinos" } },
+    { params: { produto: "Aves" } },
+    { params: { produto: "Peixes" } },
+    { params: { produto: "Suinos" } },
   ];
 }
 
@@ -19,13 +20,6 @@ const { produto } = Astro.params;
       Confira nossa lista de {produto}!
     </h2>
 
-    <ol class="grid grid-cols-3">
-      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
-      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
-      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
-      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
-      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
-      <CardProduto title={produto} imageUrl=`${produto.toLowerCase()}.png` />
-    </ol>
+    <ol class="grid grid-cols-3"></ol>
   </section>
 </Layout>

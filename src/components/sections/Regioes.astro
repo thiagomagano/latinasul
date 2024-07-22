@@ -1,0 +1,27 @@
+---
+import mapa from "@assets/svg/mapa-rs.svg";
+import caminhos from "@assets/svg/caminhos.svg";
+import { Image } from "astro:assets";
+---
+
+<section class="bg-primary text-white py-24 z-50 relative">
+  <div class="container mx-auto grid grid-cols-2 z-0">
+    <div>
+      <h2 class="text-4xl font-bold pb-24">Regiões atendidas</h2>
+      <p class="text-3xl max-w-md">
+        Atendemos mais de <span class="text-secondary font-semibold"
+          >100 municípios
+        </span> nas regiões da serra e metropolitana.
+      </p>
+    </div>
+
+    <div class="">
+      <Image src={mapa} alt="Mapa do rio grande do sul" class="w-[388px] z-0" />
+      <Image
+        src={caminhos}
+        alt="caminhos"
+        class="absolute top-0 right-0 -z-50 w-[600px]"
+      />
+    </div>
+  </div>
+</section>

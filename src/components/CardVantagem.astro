@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+
+const { iconUrl, description } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center">
+  <div class="w-12 h-12">
+    <Image src={iconUrl} alt={`icon para ${description}`} class="h-12 w-12" />
+  </div>
+  <p class="max-w-[160px] text-center font-semibold mt-4">
+    {description}
+  </p>
+</div>
