@@ -1,22 +1,39 @@
 ---
-import ProductIcons from "../ProductIcons.astro";
-import listaProdutos from "@data/produtos";
+import CardCategoria from "../CardCategoria.astro";
+import listaCategoria from "@data/categoria";
 ---
 
-<section class="w-full py-16">
-  <div class="text-primary font-medium container mx-auto flex flex-col gap-8">
-    <h1 class="font-bold text-4xl">Produtos</h1>
-    <div class="flex justify-between">
-      <p>Produto de qualidade e Selecionados</p>
+<section class="w-full py-36">
+  <div
+    class="text-primary container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8"
+  >
+    <div class="flex flex-col justify-between">
+      <h1 class="font-bold text-4xl">Produtos</h1>
+      <p class="max-w-md">
+        Os melhores cortes de carne, cuidadosamente selecionados para garantir
+        sabor, maciez e frescor. Cada peça é escolhida com rigorosos critérios
+        de qualidade.
+      </p>
+      <div>
+        <a href="/produtos" class="btn btn-secondary shrink-0 grow-0 max-w-xs">
+          Veja todos produtos
+        </a>
+        <a
+          class="btn-primary btn shrink-0 grow-0 max-w-xs"
+          download
+          href="/downloads/catalogo-latinasul2024.pdf"
+        >
+          Baixe nosso catalógo
+        </a>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 xl:grid-cols-4 overflow-x-auto">
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {
-        listaProdutos.map((produto) => (
-          <ProductIcons title={produto.title} iconUrl={produto.iconUrl} />
+        listaCategoria.map((categoria) => (
+          <CardCategoria title={categoria.titulo} iconUrl={categoria.icon} />
         ))
       }
     </div>
-    <a href="/produtos" class="underline"> Saiba mais </a>
   </div>
 </section>

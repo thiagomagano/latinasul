@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import listaCategoria from "@data/categoria";
+
+export function getStaticPaths() {
+  let listaParams = [];
+  listaCategoria.forEach((cat) => {
+    listaParams = [...listaParams, { params: { categoria: cat.titulo } }];
+  });
+
+  return listaParams;
+}
+
+const { categoria } = Astro.params;
+---
+
+<Layout title={categoria}>
+  <section>
+    <h2 class="text-6xl text-primary text-bold text-center">
+      {categoria}!
+    </h2>
+
+    <ol class="grid grid-cols-3"></ol>
+  </section>
+</Layout>

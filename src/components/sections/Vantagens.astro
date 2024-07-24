@@ -1,34 +1,6 @@
 ---
-import CardVantagem from "../CardVantagem.astro";
-
-import iconCaminhao from "@assets/svg/icon-caminhao.svg";
-import iconMarcas from "@assets/svg/icon-marcas.svg";
-import iconCaixa from "@assets/svg/icon-caixa.svg";
-import iconFolha from "@assets/svg/icon-folha.svg";
-
-interface cardVantagemProps {
-  iconUrl: ImageMetadata;
-  description: string;
-}
-
-const listaVantagens: cardVantagemProps[] = [
-  {
-    iconUrl: iconCaminhao,
-    description: "Entregamos seu pedido com frota própria",
-  },
-  {
-    iconUrl: iconMarcas,
-    description: "Trabalhamos com as melhores marcas",
-  },
-  {
-    iconUrl: iconCaixa,
-    description: "Possuimos um espaço amplo para armazenamento",
-  },
-  {
-    iconUrl: iconFolha,
-    description: "Contribuimos para a preservação do meio ambiente",
-  },
-];
+import CardVantagem from "@components/CardVantagem.astro";
+import listaVantagens from "@data/vantagens";
 ---
 
 <section class="bg-slate-100 w-full py-16">

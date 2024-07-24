@@ -1,0 +1,11 @@
+---
+const { title, iconUrl } = Astro.props;
+---
+
+<a
+  class="flex flex-col gap-2 items-center shadow-md rounded-sm bg-primary justify-center py-8 h-[150px]"
+  href={`/produtos/` + title}
+>
+  <img src={iconUrl.src} alt=`Icone de  ${title}` class="size-12" />
+  <p class="text-white">{title}</p>
+</a>
