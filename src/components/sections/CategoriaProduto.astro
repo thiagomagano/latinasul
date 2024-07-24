@@ -1,0 +1,45 @@
+---
+import placeholder from "@assets/produtos/Bovinos/placeholder.png";
+
+import CardProduto from "../CardProduto.astro";
+const { categoria } = Astro.props;
+
+import listaProduto from "@data/produtos.ts";
+
+const listaProdutosCategoria = listaProduto.filter(
+  (produto) => produto.categoria === categoria.titulo
+);
+---
+
+<div
+  class="min-h-[50svh] flex flex-col py-16 space-y-16 justify-center items-center"
+>
+  <div class="flex gap-4 items-center justify-center">
+    <img
+      src={categoria.icon.src}
+      alt={`Icone de ${categoria.titulo}`}
+      class="size-16"
+    />
+    <h2 class="text-5xl">{categoria.titulo}</h2>
+  </div>
+
+  <div class="carousel rounded-box space-x-4 max-w-full">
+    {
+      listaProdutosCategoria.map((produto) => (
+        <CardProduto
+          titulo={produto.titulo}
+          imagem={produto.imagem}
+          ref={produto.ref}
+          categoria={produto.categoria}
+        />
+      ))
+    }
+  </div>
+  <a
+    href={"/produtos/" + categoria.titulo}
+    class="btn btn-secondary max-w-xs uppercase"
+  >
+    Veja a lista completa
+  </a>
+  <div class="divider"></div>
+</div>

@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import CardCategoria from "../components/CardCategoria.astro";
 
-import listaProdutos from "@data/categoria";
+import listaCategoria from "@data/categoria";
+import CategoriaProduto from "../components/sections/CategoriaProduto.astro";
 
 // import PocketBase from "pocketbase";
 
@@ -12,21 +13,25 @@ import listaProdutos from "@data/categoria";
 ---
 
 <Layout title="Produtos - Latina Sul">
-  <section class="container mx-auto py-36 px-6">
-    <div>
-      <h1 class="text-4xl font-bold text-center mb-8">Produtos</h1>
-      <p>Escolha uma categoria para visualizar os produtos</p>
-    </div>
+  <section class="">
+    <div class="bg-gray-200 min-h-[230px]"></div>
+    <div class="container mx-auto">
+      <div class="grid grid-cols-4 gap-5 -mt-28 px-80">
+        {
+          listaCategoria.map((categoria) => (
+            <CardCategoria
+              title={categoria.titulo}
+              iconUrl={categoria.icon}
+              description={categoria.titulo}
+            />
+          ))
+        }
+      </div>
 
-    <div class="grid grid-cols-4 gap-5">
       {
-        listaProdutos.map((produto) => (
-          <CardCategoria
-            title={produto.titulo}
-            iconUrl={produto.icon}
-            description={produto.titulo}
-          />
-        ))
+        listaCategoria.map((categoria) => {
+          return <CategoriaProduto categoria={categoria} />;
+        })
       }
     </div>
   </section>

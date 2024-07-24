@@ -1,12 +1,23 @@
 ---
 import { Image } from "astro:assets";
 
-const { title, description, iconUrl } = Astro.props;
+const { titulo, ref, imagem, categoria } = Astro.props;
 ---
 
-<div class="bg-white rounded-lg shadow-md p-6">
-  <div class="flex gap-8 items-center">
-    <Image src={iconUrl} alt={title} class="" format="svg" />
-    <h2 class="text-xl font-semibold mb-2">{title}</h2>
+<div
+  class="card bg-base-100 w-96 shadow-xl carousel-item border border-gray-300"
+>
+  <figure>
+    <!-- <Image src={image} alt="Image Place Holder" class="card-body" /> -->
+    <img
+      src={"/src/assets/produtos/" + categoria + "/" + imagem}
+      alt={`imagem de ${titulo}`}
+    />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title text-primary text-2xl">
+      {titulo}
+    </h2>
+    <p class="text-secondary">Ref {ref}</p>
   </div>
 </div>
