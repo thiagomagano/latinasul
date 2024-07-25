@@ -4,16 +4,6 @@ import Hero from "../components/sections/Hero.astro";
 import Vantagens from "../components/sections/Vantagens.astro";
 import ProdutosHome from "../components/sections/ProdutoHome.astro";
 import Regioes from "../components/sections/Regioes.astro";
-
-const locals = Astro.locals;
-
-const userAuth = async () => {
-  const { token, record } = await locals.pb
-    .collection("users")
-    .authWithPassword("test@example.com", "123456");
-
-  return new Response("Success...");
-};
 ---
 
 <Layout title="Home - Latina Sul">

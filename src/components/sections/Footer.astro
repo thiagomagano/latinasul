@@ -1,8 +1,5 @@
 ---
 import localizacao from "@assets/local-latina-sul.png";
-import capazlogo from "@assets/svg/capaz_logo.svg";
-import logolatina from "@assets/svg/logo-semcuia.svg";
-import { Image } from "astro:assets";
 ---
 
 <footer class="footer grid-flow-row py-16 px-16 bg-white text-primary">
@@ -59,7 +56,7 @@ import { Image } from "astro:assets";
       </div>
 
       <div>
-        <Image src={logolatina} alt="Latina" />
+        <img src="/src/assets/svg/logo-semcuia.svg" alt="Latina" />
       </div>
     </div>
   </div>
@@ -71,7 +68,7 @@ import { Image } from "astro:assets";
         href="https://capazestudio.com.br"
         class="inline-block px-2 hover:underline transition-all hover:scale-105"
       >
-        <Image src={capazlogo} alt="Logo Capaz Estúdio" />
+        <img src="/src/assets/svg/capaz_logo.svg" alt="Logo Capaz Estúdio" />
       </a>
     </p>
   </div>

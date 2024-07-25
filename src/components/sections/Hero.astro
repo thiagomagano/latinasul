@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { fade } from "astro:transitions";
 import cuiaHero from "@assets/svg/cuia-hero-white.svg";
 ---
@@ -22,8 +21,8 @@ import cuiaHero from "@assets/svg/cuia-hero-white.svg";
       class="transition duration-150 ease-out"
       transition:animate={fade({ duration: "0.8s" })}
     >
-      <Image
-        src={cuiaHero}
+      <img
+        src={cuiaHero.src}
         alt="Qualidade e excelência são nossa marca"
         class="w-[700px]"
       />
