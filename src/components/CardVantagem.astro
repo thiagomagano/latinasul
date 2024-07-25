@@ -3,8 +3,12 @@ const { iconUrl, description } = Astro.props;
 ---
 
 <div class="flex flex-col items-center justify-center">
-  <div class="">
-    <img src={iconUrl.src} alt={`icon para ${description}`} />
+  <div class="size-16">
+    <img
+      src={iconUrl.src}
+      alt={`icon para ${description}`}
+      class="w-full object-contain"
+    />
   </div>
   <p class="max-w-[160px] text-center font-semibold mt-4">
     {description}
