@@ -2,8 +2,10 @@
 const { titulo, ref, imagem, categoria } = Astro.props;
 ---
 
-<div class="card bg-base-100 w-96 shadow-xl border border-gray-300">
-  <figure class="w-80 h-96 justify-self-center card-body">
+<div
+  class="bg-base-100 border-2 border-gray-200 max-w-80 flex flex-col items-center"
+>
+  <figure class="w-60 h-80">
     <!-- <Image src={image} alt="Image Place Holder" class="card-body" /> -->
     <img
       src={"/assets/produtos/" + categoria + "/" + imagem}
@@ -11,10 +13,11 @@ const { titulo, ref, imagem, categoria } = Astro.props;
       class="w-full h-full object-contain"
     />
   </figure>
-  <div class="card-body">
+
+  <div class="card-body self-start">
     <h2 class="card-title text-primary text-2xl">
       {titulo}
     </h2>
-    <p class="text-secondary">Ref {ref}</p>
+    <p class="text-secondary">REF: 0000</p>
   </div>
 </div>
