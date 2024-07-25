@@ -34,6 +34,36 @@ const listaProdutosCategoria = listaProduto.filter(
         />
       ))
     }
+    {
+      listaProdutosCategoria.map((produto) => (
+        <CardProduto
+          titulo={produto.titulo}
+          imagem={produto.imagem}
+          ref={produto.ref}
+          categoria={produto.categoria}
+        />
+      ))
+    }
+    {
+      listaProdutosCategoria.map((produto) => (
+        <CardProduto
+          titulo={produto.titulo}
+          imagem={produto.imagem}
+          ref={produto.ref}
+          categoria={produto.categoria}
+        />
+      ))
+    }
+    {
+      listaProdutosCategoria.map((produto) => (
+        <CardProduto
+          titulo={produto.titulo}
+          imagem={produto.imagem}
+          ref={produto.ref}
+          categoria={produto.categoria}
+        />
+      ))
+    }
   </div>
   <a
     href={"/produtos/" + categoria.titulo}

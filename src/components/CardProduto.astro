@@ -4,14 +4,13 @@ import { Image } from "astro:assets";
 const { titulo, ref, imagem, categoria } = Astro.props;
 ---
 
-<div
-  class="card bg-base-100 w-96 shadow-xl carousel-item border border-gray-300"
->
-  <figure>
+<div class="card bg-base-100 w-96 shadow-xl border border-gray-300">
+  <figure class="w-80 h-96 justify-self-center card-body">
     <!-- <Image src={image} alt="Image Place Holder" class="card-body" /> -->
     <img
       src={"/src/assets/produtos/" + categoria + "/" + imagem}
       alt={`imagem de ${titulo}`}
+      class="w-full h-full object-contain"
     />
   </figure>
   <div class="card-body">
