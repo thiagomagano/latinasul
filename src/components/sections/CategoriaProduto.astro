@@ -1,6 +1,4 @@
 ---
-import placeholder from "@assets/produtos/Bovinos/placeholder.png";
-
 import CardProduto from "../CardProduto.astro";
 const { categoria } = Astro.props;
 
@@ -24,26 +22,6 @@ const listaProdutosCategoria = listaProduto.filter(
   </div>
 
   <div class="carousel rounded-box space-x-4 max-w-full">
-    {
-      listaProdutosCategoria.map((produto) => (
-        <CardProduto
-          titulo={produto.titulo}
-          imagem={produto.imagem}
-          ref={produto.ref}
-          categoria={produto.categoria}
-        />
-      ))
-    }
-    {
-      listaProdutosCategoria.map((produto) => (
-        <CardProduto
-          titulo={produto.titulo}
-          imagem={produto.imagem}
-          ref={produto.ref}
-          categoria={produto.categoria}
-        />
-      ))
-    }
     {
       listaProdutosCategoria.map((produto) => (
         <CardProduto

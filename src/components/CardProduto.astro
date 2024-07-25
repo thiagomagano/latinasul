@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 const { titulo, ref, imagem, categoria } = Astro.props;
 ---
 
@@ -8,7 +6,7 @@ const { titulo, ref, imagem, categoria } = Astro.props;
   <figure class="w-80 h-96 justify-self-center card-body">
     <!-- <Image src={image} alt="Image Place Holder" class="card-body" /> -->
     <img
-      src={"/src/assets/produtos/" + categoria + "/" + imagem}
+      src={"src/assets/produtos/" + categoria + "/" + imagem}
       alt={`imagem de ${titulo}`}
       class="w-full h-full object-contain"
     />
