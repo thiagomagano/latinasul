@@ -5,11 +5,16 @@ import CardCategoria from "../components/CardCategoria.astro";
 import listaCategoria from "@data/categoria";
 import CategoriaProduto from "../components/sections/CategoriaProduto.astro";
 
-// import PocketBase from "pocketbase";
+import PocketBase from "pocketbase";
 
-// const pb = new PocketBase("https://pb.latinasuldistribuidora.com.br");
-// const produtos = pb.collection("produtos");
-// const listaProdutos = await produtos.getFullList();
+const pb = new PocketBase(import.meta.env.PUBLIC_PB_API);
+
+// you can also fetch all records at once via getFullList
+const listaProdutos = await pb.collection("produtos").getFullList({
+  sort: "-created",
+});
+
+console.log(listaProdutos);
 ---
 
 <Layout title="Produtos - Latina Sul">

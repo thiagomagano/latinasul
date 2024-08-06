@@ -12,12 +12,6 @@ const listaProduto: produto[] = [
     ref: "0000",
     imagem: "Bovinos-placeholder.jpg",
   },
-  // {
-  //   titulo: "Pernil",
-  //   categoria: "Cordeiros",
-  //   ref: "0000",
-  //   imagem: "Cordeiros-placeholder.jpg",
-  // },
   {
     titulo: "Costela",
     categoria: "Suinos",
