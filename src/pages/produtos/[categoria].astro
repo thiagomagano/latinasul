@@ -1,7 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
+import CardProduto from "@components/CardProduto.astro";
+
 import listaCategoria from "@data/categoria";
+import pb from "@lib/pocketbase";
 
 export function getStaticPaths() {
   let listaParams = [];
@@ -13,14 +16,34 @@ export function getStaticPaths() {
 }
 
 const { categoria } = Astro.params;
+
+pb.autoCancellation(false);
+
+const listaProduto = await pb.collection("produtos").getFullList({
+  expand: "categoria",
+  filter: `categoria.titulo = "${categoria}"`,
+  sort: "ref",
+});
 ---
 
 <Layout title={categoria}>
-  <section>
-    <h2 class="text-6xl text-primary text-bold text-center">
-      {categoria}!
+  <section class="container mx-auto py-12">
+    <h2 class="text-6xl text-primary text-bold text-center uppercase font-bold">
+      {categoria}
     </h2>
 
-    <ol class="grid grid-cols-3"></ol>
+    <div class="grid grid-cols-4 gap-3 py-12">
+      {
+        listaProduto.map((produto) => (
+          <CardProduto
+            id={produto.id}
+            titulo={produto.descricao}
+            imagem={produto.image}
+            ref={produto.ref}
+            categoria={produto.categoria}
+          />
+        ))
+      }
+    </div>
   </section>
 </Layout>
