@@ -26,12 +26,12 @@ const listaCategoria: categoria[] = [
     icon: iconSuino,
   },
   {
-    titulo: "Industrializados",
-    icon: iconIndustrializados,
-  },
-  {
     titulo: "Aves",
     icon: iconFrango,
+  },
+  {
+    titulo: "Industrializados",
+    icon: iconIndustrializados,
   },
   {
     titulo: "Peixes",

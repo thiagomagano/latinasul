@@ -2,11 +2,16 @@
 import CardProduto from "../CardProduto.astro";
 const { categoria } = Astro.props;
 
-import listaProduto from "@data/produtos.ts";
+import pb from "@lib/pocketbase";
 
-const listaProdutosCategoria = listaProduto.filter(
-  (produto) => produto.categoria === categoria.titulo
-);
+pb.autoCancellation(false);
+const listaProdutosCategoria = await pb.collection("produtos").getList(1, 4, {
+  expand: "categoria",
+  filter: `categoria.titulo = "${categoria.titulo}"`,
+  sort: "@random",
+});
+
+const listaProduto = listaProdutosCategoria.items;
 ---
 
 <div class="min-h-[50svh] flex flex-col py-6 space-y-16">
@@ -23,10 +28,11 @@ const listaProdutosCategoria = listaProduto.filter(
   <div class="grid grid-cols-5 items-center gap-4">
     <div class="grid grid-cols-4 col-span-4 gap-x-4 place-content-center">
       {
-        listaProdutosCategoria.map((produto) => (
+        listaProduto.map((produto) => (
           <CardProduto
-            titulo={produto.titulo}
-            imagem={produto.imagem}
+            id={produto.id}
+            titulo={produto.descricao}
+            imagem={produto.image}
             ref={produto.ref}
             categoria={produto.categoria}
           />

@@ -5,20 +5,15 @@ import CardCategoria from "../components/CardCategoria.astro";
 import listaCategoria from "@data/categoria";
 import CategoriaProduto from "../components/sections/CategoriaProduto.astro";
 
-import PocketBase from "pocketbase";
-
-const pb = new PocketBase(import.meta.env.PUBLIC_PB_API);
-
-// you can also fetch all records at once via getFullList
-const listaProdutos = await pb.collection("produtos").getFullList({
-  sort: "-created",
+const listaCategoriaCortada = listaCategoria.filter((c) => {
+  return (
+    c.titulo === "Bovinos" || c.titulo === "Cordeiros" || c.titulo === "Suinos"
+  );
 });
-
-console.log(listaProdutos);
 ---
 
 <Layout title="Produtos - Latina Sul">
-  <section class="bg-gray-100">
+  <section class="bg-gray-200">
     <div class="bg-slate-200 min-h-[230px]">
       <h1 class="text-4xl text-center pt-8 uppercase text-primary font-bold">
         Confira nossos Produtos
@@ -39,7 +34,7 @@ console.log(listaProdutos);
       </div>
 
       {
-        listaCategoria.map((categoria) => {
+        listaCategoriaCortada.map((categoria) => {
           return <CategoriaProduto categoria={categoria} />;
         })
       }
