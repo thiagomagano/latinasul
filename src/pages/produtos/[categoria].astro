@@ -19,11 +19,31 @@ const { categoria } = Astro.params;
 
 pb.autoCancellation(false);
 
-const listaProduto = await pb.collection("produtos").getFullList({
+let listaProduto = undefined;
+let caixaria = undefined;
+
+
+if (categoria === "Bovinos") {
+  listaProduto =  await pb.collection("produtos").getFullList({
+    expand: "categoria",
+    filter: `ref ~"G"`,
+    sort: "ref",
+  });
+    caixaria =  await pb.collection("produtos").getFullList({
+      expand: "categoria",
+      filter: `ref ~"C"`,
+      sort: "ref",
+  });  
+  
+} 
+
+else {
+  listaProduto = await pb.collection("produtos").getFullList({
   expand: "categoria",
   filter: `categoria.titulo = "${categoria}"`,
   sort: "ref",
 });
+}
 ---
 
 <Layout title={categoria}>
@@ -38,7 +58,9 @@ const listaProduto = await pb.collection("produtos").getFullList({
             alt="icon de ${categoria}"
             class="size-6"
           />
-          {categoria}
+
+          {categoria==="Bovinos" ? (categoria + " - Gancho")  : categoria}
+           
         </h2>
         {(categoria==='Cordeiros' || categoria==="Suinos"  || categoria==="Bovinos" || categoria==="Aves") && (
           
@@ -61,6 +83,7 @@ const listaProduto = await pb.collection("produtos").getFullList({
       </div>
 
       <div class="grid grid-cols-4 gap-3 py-4">
+        
         {
           listaProduto.map((produto) => (
             <CardProduto
@@ -73,6 +96,39 @@ const listaProduto = await pb.collection("produtos").getFullList({
           ))
         }
       </div>
+
+    
+
+    {caixaria && (
+      
+      
+      <h2
+          class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2"
+        >
+          <img
+            src=`/assets/svg/categorias/${categoria.toLowerCase()}.svg`
+            alt="icon de ${categoria}"
+            class="size-6"
+          />
+          {categoria} - Caixaria
+      </h2>
+      
+      
+      <div class="grid grid-cols-4 gap-3 py-4">
+              {
+                caixaria.map((produto) => (
+                  <CardProduto
+                    id={produto.id}
+                    titulo={produto.descricao}
+                    imagem={produto.image}
+                    ref={produto.ref}
+                    categoria={produto.categoria}
+                  />
+                ))
+              }
+            </div>
+      )}
+
     </div>
   </section>
 </Layout>
