@@ -4,7 +4,7 @@ import iconOvino from "@assets/svg/categorias/cordeiros.svg";
 import iconSuino from "@assets/svg/categorias/suinos.svg";
 import iconPeixe from "@assets/svg/categorias/peixes.svg";
 import iconVegetais from "@assets/svg/categorias/vegetais.svg";
-import iconLaticinios from "@assets/svg/categorias/lacteos.svg";
+import iconQueijos from "@assets/svg/categorias/queijos.svg";
 import iconIndustrializados from "@assets/svg/categorias/industrializados.svg";
 
 interface categoria {
@@ -39,7 +39,7 @@ const listaCategoria: categoria[] = [
   },
   {
     titulo: "Queijos",
-    icon: iconLaticinios,
+    icon: iconQueijos,
   },
   {
     titulo: "Vegetais",

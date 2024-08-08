@@ -27,12 +27,28 @@ const listaProduto = await pb.collection("produtos").getFullList({
 ---
 
 <Layout title={categoria}>
-  <section class="container mx-auto py-12">
-    <h2 class="text-6xl text-primary text-bold text-center uppercase font-bold">
-      {categoria}
-    </h2>
+  <section class="container mx-auto space-y-12">
+    <div class="divider pt-16"></div>
+    <div class="flex justify-center flex-col items-center gap-20">
+      <h2
+        class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2"
+      >
+        <img
+          src=`/assets/svg/categorias/${categoria.toLowerCase()}.svg`
+          alt="icon de ${categoria}"
+          class="size-6"
+        />
+        {categoria}
+      </h2>
 
-    <div class="grid grid-cols-4 gap-3 py-12">
+      <img
+        src=`/assets/svg/mapas/${categoria}_mapa.svg`
+        alt=`Mapa do animal ${categoria}`
+        class=""
+      />
+    </div>
+
+    <div class="grid grid-cols-4 gap-3 py-4">
       {
         listaProduto.map((produto) => (
           <CardProduto
