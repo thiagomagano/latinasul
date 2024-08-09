@@ -6,10 +6,10 @@ import listaCategoria from "@data/categoria";
 import CategoriaProduto from "../components/sections/CategoriaProduto.astro";
 
 const listaCategoriaCortada = listaCategoria.filter((c) => {
-  return (
-    c.titulo === "Bovinos" || c.titulo === "Cordeiros" || c.titulo === "Suinos"
-  );
+  return c.titulo !== "Peixes";
 });
+
+console.log(listaCategoriaCortada);
 ---
 
 <Layout title="Produtos - Latina Sul">
@@ -34,7 +34,7 @@ const listaCategoriaCortada = listaCategoria.filter((c) => {
       </div>
 
       {
-        listaCategoria.map((categoria) => {
+        listaCategoriaCortada.map((categoria) => {
           return <CategoriaProduto categoria={categoria} />;
         })
       }

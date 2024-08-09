@@ -49,9 +49,9 @@ else {
 <Layout title={categoria}>
   <section class="py-12">
     <div class="container mx-auto space-y-12">
-      <div class="flex justify-center flex-col items-center gap-20">
+      <div class="flex justify-center flex-col items-center gap-20 relative">
         <h2
-          class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2"
+          class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2 relative"
         >
           <img
             src=`/assets/svg/categorias/${categoria.toLowerCase()}.svg`
@@ -62,9 +62,11 @@ else {
           {categoria==="Bovinos" ? (categoria + " Com Osso - Gancho")  : categoria}
            
         </h2>
+        
+        
         {(categoria==='Cordeiros' || categoria==="Suinos"  || categoria==="Bovinos" || categoria==="Aves") && (
           
-          <div class="flex">
+          <div class="flex items-center justify-center">
             <img
             src=`/assets/svg/mapas/${categoria}_mapa.svg`
             alt=`Mapa do animal ${categoria}`
@@ -73,7 +75,17 @@ else {
 
           {
             categoria === "Cordeiros" && (
-              <img src="/assets/svg/mapas/cordeiros_infos.svg" />
+            
+              <img src="/assets/produtos/Parceiros/info-cordeiros.png" class="-ml-14 -z-10" />
+              <img src="/assets/produtos/Parceiros/logo-latina-producao-propria.png" class="object-contain order-first mr-14" />
+              
+             
+            )
+          }
+          {
+            categoria === "Bovinos" && (
+              <img src="/assets/produtos/Parceiros/frigolon-logo.png" class="object-contain ml-10" />
+              // <img src="/assets/produtos/Parceiros/frigolon-logo.png" class="object-contain absolute -top-14 right-48 size-48" />/
             )
           }
           </div>
@@ -90,7 +102,7 @@ else {
               id={produto.id}
               titulo={produto.descricao}
               imagem={produto.image}
-              ref={produto.ref}
+              ref={categoria==="Bovinos" ? produto.ref : ""}
               categoria={produto.categoria}
               record={produto}
             />
@@ -103,35 +115,45 @@ else {
     
     {caixaria && (
       
-      
+      <div class="space-y-4">
+
       <h2
           class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2 justify-center"
-        >
+          >
           <img
             src=`/assets/svg/categorias/${categoria.toLowerCase()}.svg`
             alt="icon de ${categoria}"
             class="size-6"
-          />
+            />
           {categoria} - Caixaria
       </h2>
+
+      <div class="flex gap-4  items-center pt-3">
+        <h3 class="text-xl font-semibold text-primary uppercase">Parceiros:</h3>
+        <div class="flex">
+          <img src="/assets/produtos/Parceiros/frigolon-logo.png" alt="Logo dos Parceiros caixaria" class="w-28 object-contain">
+          <img src="/assets/produtos/Parceiros/parceiros-logos.png" alt="Logo dos Parceiros caixaria">
+        </div>
+      </div>
       
       
       <div class="grid grid-cols-4 py-4">
               {
                 caixaria.map((produto) => (
                   <CardProduto
-                    id={produto.id}
-                    titulo={produto.descricao}
-                    imagem={produto.image}
-                    ref={produto.ref}
-                    categoria={produto.categoria}
-                    record={produto}
+                  id={produto.id}
+                  titulo={produto.descricao}
+                  imagem={produto.image}
+                  ref={""}
+                  categoria={produto.categoria}
+                  record={produto}
                   />
                 ))
               }
-            </div>
+      </div>
+    </div>
       )}
 
-    </div>
+              </div>
   </section>
 </Layout>
