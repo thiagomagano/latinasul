@@ -59,7 +59,7 @@ else {
             class="size-6"
           />
 
-          {categoria==="Bovinos" ? (categoria + " - Gancho")  : categoria}
+          {categoria==="Bovinos" ? (categoria + " Com Osso - Gancho")  : categoria}
            
         </h2>
         {(categoria==='Cordeiros' || categoria==="Suinos"  || categoria==="Bovinos" || categoria==="Aves") && (
@@ -82,7 +82,7 @@ else {
         
       </div>
 
-      <div class="grid grid-cols-4 gap-3 py-4">
+      <div class="grid grid-cols-4 py-4">
         
         {
           listaProduto.map((produto) => (
@@ -92,18 +92,20 @@ else {
               imagem={produto.image}
               ref={produto.ref}
               categoria={produto.categoria}
+              record={produto}
             />
           ))
         }
       </div>
 
     
-
+          <!-- Bovino tem Caixaria -->
+    
     {caixaria && (
       
       
       <h2
-          class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2"
+          class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2 justify-center"
         >
           <img
             src=`/assets/svg/categorias/${categoria.toLowerCase()}.svg`
@@ -114,7 +116,7 @@ else {
       </h2>
       
       
-      <div class="grid grid-cols-4 gap-3 py-4">
+      <div class="grid grid-cols-4 py-4">
               {
                 caixaria.map((produto) => (
                   <CardProduto
@@ -123,6 +125,7 @@ else {
                     imagem={produto.image}
                     ref={produto.ref}
                     categoria={produto.categoria}
+                    record={produto}
                   />
                 ))
               }

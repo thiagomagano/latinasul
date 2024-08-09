@@ -1,17 +1,32 @@
 ---
 import getImageFromPB from "@lib/utils/getImageFromPB";
 import { Image } from "astro:assets";
-const { id, titulo, ref, imagem, categoria } = Astro.props;
+import pb from "@lib/pocketbase";
+const { id, titulo, ref, imagem, categoria, record } = Astro.props;
 
-const imageSrc = getImageFromPB("produtos", id, imagem, false);
+//let imageSrc = getImageFromPB("produtos", id, imagem, false);
+
+let url = pb.files.getUrl(record, imagem, { thumb: "240x320" });
+
+if (!url) {
+  url = `https://placehold.co/240x320`;
+}
+
+//console.log(imageSrc);
 ---
 
 <div
-  class="bg-base-100 border-2 border-gray-300 max-w-none flex flex-col items-center"
+  class="relative bg-base-100 max-w-none grid grid-cols-3 border border-gray-300 rounded-xl"
 >
-  <figure class="w-60 h-80">
+  <div class="card-body self-start z-20">
+    <h2 class="card-title text-primary text-2xl">
+      {titulo}
+    </h2>
+    <p class="text-secondary">{ref}</p>
+  </div>
+  <figure class="w-[240px] h-[320px] overflow-hidden col-span-2">
     <Image
-      src={imageSrc}
+      src={url}
       alt={`imagem de ${titulo}`}
       class="w-full h-full object-contain"
       width={240}
@@ -19,11 +34,12 @@ const imageSrc = getImageFromPB("produtos", id, imagem, false);
       loading="lazy"
     />
   </figure>
-
-  <div class="card-body self-start">
-    <h2 class="card-title text-primary text-2xl">
-      {titulo}
-    </h2>
-    <!-- <p class="text-secondary">REF: {ref}</p> -->
-  </div>
+  <!-- Canto superior esquerdo -->
+  <div class="absolute top-0 left-0 w-8 h-8 bg-white"></div>
+  <!-- Canto superior direito -->
+  <div class="absolute top-0 right-0 w-8 h-8 bg-white"></div>
+  <!-- Canto inferior esquerdo -->
+  <div class="absolute bottom-0 left-0 w-8 h-8 bg-white"></div>
+  <!-- Canto inferior direito -->
+  <div class="absolute bottom-0 right-0 w-8 h-8 bg-white"></div>
 </div>
