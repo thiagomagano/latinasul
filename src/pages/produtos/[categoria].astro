@@ -47,11 +47,11 @@ else {
 ---
 
 <Layout title={categoria}>
-  <section class="py-12">
+  <section class="py-12 px-2 lg:px-0">
     <div class="container mx-auto space-y-12">
       <div class="flex justify-center flex-col items-center gap-20 relative">
         <h2
-          class="text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2 relative"
+          class="text-xl md:text-3xl text-primary text-center uppercase font-semibold flex items-center gap-2 relative"
         >
           <img
             src=`/assets/svg/categorias/${categoria.toLowerCase()}.svg`
@@ -66,7 +66,7 @@ else {
         
         {(categoria==='Cordeiros' || categoria==="Suinos"  || categoria==="Bovinos" || categoria==="Aves") && (
           
-          <div class="flex items-center justify-center">
+          <div class="flex items-center justify-center flex-wrap">
             <img
             src=`/assets/svg/mapas/${categoria}_mapa.svg`
             alt=`Mapa do animal ${categoria}`
@@ -93,7 +93,7 @@ else {
         
       </div>
 
-      <div class="grid grid-cols-4 py-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-4">
         
         {
           listaProduto.map((produto) => (
@@ -131,12 +131,12 @@ else {
         <h3 class="text-xl font-semibold text-primary uppercase">Parceiros:</h3>
         <div class="flex">
           <img src="/assets/produtos/Parceiros/frigolon-logo.png" alt="Logo dos Parceiros caixaria" class="w-28 object-contain">
-          <img src="/assets/produtos/Parceiros/parceiros-logos.png" alt="Logo dos Parceiros caixaria">
+          <img src="/assets/produtos/Parceiros/parceiros-logos.png" alt="Logo dos Parceiros caixaria" class="w-0 md:w-full">
         </div>
       </div>
       
       
-      <div class="grid grid-cols-4 py-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-4">
               {
                 caixaria.map((produto) => (
                   <CardProduto
