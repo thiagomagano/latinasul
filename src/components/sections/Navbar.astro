@@ -1,7 +1,7 @@
 <div class="navbar bg-transparent py-3 px-4 container mx-auto">
   <div class="navbar-start">
     <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost sm:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
@@ -18,20 +18,26 @@
       </div>
       <ul
         tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2"
       >
         <li><a href="/quemsomos">Quem Somos</a></li>
         <li>
           <a href="/produtos">Produtos</a>
         </li>
         <li><a href="/contato">Contato</a></li>
+        <a
+          class="btn btn-secondary mt-2"
+          download
+          href="/downloads/catalogo-latinasul-preview.pdf "
+          >Baixe nosso Catalógo</a
+        >
       </ul>
     </div>
-    <a href="/" class="uppercase text-3xl text-primary btn btn-ghost"
-      >Latina<span class="text-secondary">Sul</span></a
-    >
+    <a href="/" class="uppercase text-3xl text-primary btn btn-ghost">
+      <img src="/assets/svg/logo-semcuia.svg" alt="Logo Latina Sul" />
+    </a>
   </div>
-  <div class="navbar-center hidden lg:flex">
+  <div class="navbar-center hidden sm:flex">
     <ul class="menu menu-horizontal px-1 text-primary font-semibold">
       <li><a href="/quemsomos">Quem Somos</a></li>
       <li><a href="/produtos">Produtos</a></li>
@@ -39,11 +45,11 @@
       <li><a href="/contato">Contato</a></li>
     </ul>
   </div>
-  <div class="navbar-end">
+  <div class="navbar-end hidden md:flex">
     <a
       class="btn btn-secondary"
       download
-      href="/downloads/catalogo-latinasul-preview.pdf">Baixe nosso Catalógo</a
+      href="/downloads/catalogo-latinasul-preview.pdf ">Baixe nosso Catalógo</a
     >
   </div>
 </div>

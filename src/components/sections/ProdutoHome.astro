@@ -3,18 +3,18 @@ import CardCategoria from "../CardCategoria.astro";
 import listaCategoria from "@data/categoria";
 ---
 
-<section class="w-full py-36">
+<section class="w-full lg:py-24 py-12 px-4">
   <div
-    class="text-primary container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8"
+    class="text-primary container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 gap-y-12 md:gap-y-0"
   >
-    <div class="flex flex-col justify-between">
+    <div class="flex flex-col justify-between gap-4">
       <h1 class="font-bold text-4xl">Produtos</h1>
       <p class="max-w-md">
         Os melhores cortes de carne, cuidadosamente selecionados para garantir
         sabor, maciez e frescor. Cada peça é escolhida com rigorosos critérios
         de qualidade.
       </p>
-      <div>
+      <div class="flex flex-col md:flex-row gap-4 lg:gap-2">
         <a href="/produtos" class="btn btn-secondary shrink-0 grow-0 max-w-xs">
           Veja todos produtos
         </a>
@@ -28,7 +28,7 @@ import listaCategoria from "@data/categoria";
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {
         listaCategoria.map((categoria) => (
           <CardCategoria title={categoria.titulo} iconUrl={categoria.icon} />

@@ -15,11 +15,12 @@ let icon = pb.files.getUrl(record.expand.categoria, record.expand.categoria.icon
 <div
   class="relative bg-base-100 max-w-none grid grid-cols-3 border border-gray-300 rounded-xl"
 >
-  <div class="card-body self-start z-20">
-    <h2 class="card-title text-primary text-2xl">
+  <div class="card-body self-start z-20 flex flex-col gap-4 items-start justify-between">
+    <h2 class="card-title text-primary text-2xl ">
       {titulo}
     </h2>
-    {ref && <p class="text-secondary">{ref}</p>}
+      
+    {ref && <p class="text-secondary flex flex-col justify-between items-center"> <img src={icon} alt="Icon" class="size-10  bg-primary p-1 bg-transparent rounded-full border border-1 border-secondary mb-1"> {ref}</p>}
   </div>
   <figure class="w-[240px] h-[320px] overflow-hidden col-span-2">
     <Image
@@ -73,8 +74,6 @@ let icon = pb.files.getUrl(record.expand.categoria, record.expand.categoria.icon
   <div class="absolute bottom-0 right-0 w-8 h-8 bg-white"></div>
 </div>
 )
-
-
 
 
 }

@@ -2,12 +2,14 @@
 import localizacao from "@assets/local-latina-sul.png";
 ---
 
-<footer class="footer grid-flow-row py-16 px-16 bg-white text-primary">
-  <div class="grid grid-cols-3 container mx-auto">
-    <aside class="grid grid-cols-2">
+<footer class="mx-auto container py-8 md:py-16 px-4 text-primary border-t-2">
+  <div
+    class="grid lg:grid-cols-3 gap-y-8 w-full lg:place-items-center lg:place-content-center"
+  >
+    <aside class="grid md:grid-cols-2 gap-2 gap-y-8">
       <nav>
         <h6 class="footer-title">Menu</h6>
-        <ul class="flex flex-col gap-2 mt-8">
+        <ul class="flex flex-col gap-2 md:mt-8">
           <li><a href="/">Home</a></li>
           <li><a href="/quemsomos">Quem somos</a></li>
           <li><a href="/produtos">Produtos</a></li>
@@ -15,15 +17,14 @@ import localizacao from "@assets/local-latina-sul.png";
         </ul>
       </nav>
 
-      <div class="grid grid-row-2 gap-y-8">
+      <div class="flex flex-col gap-4">
         <div>
           <h6 class="footer-title">Fale conosco</h6>
-          <p class="text-3xl font-semibold text-primary pt-4">(51) 37838200</p>
+          <p class="text-3xl font-semibold text-primary">(51) 37838200</p>
         </div>
         <div>
-          <h6 class="footer-title pb-4">Acompanhe nosso insta</h6>
-
-          <div class="grid grid-flow-col gap-4">
+          <h6 class="footer-title">Acompanhe nosso insta</h6>
+          <div class="">
             <a
               href="https://instagram.com/latinasul_distribuidora"
               target="_blank"
@@ -42,10 +43,18 @@ import localizacao from "@assets/local-latina-sul.png";
       </div>
     </aside>
 
-    <div>
+    <div class="">
       <h6 class="footer-title pb-4">Nosso endereço</h6>
-      <a href="https://maps.app.goo.gl/rGsQ95sSKfdvDuQd6" target="_blank">
-        <img src={localizacao.src} alt="Mapa com a localização da Latina Sul" />
+      <a
+        href="https://maps.app.goo.gl/rGsQ95sSKfdvDuQd6"
+        target="_blank"
+        class="block"
+      >
+        <img
+          src={localizacao.src}
+          alt="Mapa com a localização da Latina Sul"
+          class="object-contain w-full"
+        />
       </a>
     </div>
     <div>
@@ -56,13 +65,13 @@ import localizacao from "@assets/local-latina-sul.png";
       </div>
 
       <div>
-        <img src="/assets/svg/logo-semcuia.svg" alt="Latina" />
+        <img src="/assets/svg/logo.svg" alt="Latina" />
       </div>
     </div>
   </div>
 
-  <div class="w-full grid place-items-center pt-8">
-    <p class="flex items-center justify-center">
+  <div class="place-items-center pt-16">
+    <p class="flex flex-wrap items-center justify-center">
       © {new Date().getFullYear()} Site desenvolvido por
       <a
         href="https://capazestudio.com.br"
