@@ -11,7 +11,7 @@ const listaCategoriaCortada = listaCategoria.filter((c) => {
 ---
 
 <Layout title="Produtos - Latina Sul">
-  <section class="bg-base-100">
+  <section class="bg-base-100" transition:animate="slide">
     <div class="bg-slate-300 min-h-[230px]">
       <h1 class="text-3xl text-center pt-10 uppercase text-primary font-bold">
         Conheça nossos Produtos
@@ -19,12 +19,12 @@ const listaCategoriaCortada = listaCategoria.filter((c) => {
     </div>
 
     <div
-      class="container mx-auto -mt-28 lg:px-4 flex justify-center items-center"
+      class="container mx-auto -mt-28 lg:px-4 flex justify-center items-center box"
     >
       <ListaCartegoria />
     </div>
   </section>
-  <div class="container mx-auto">
+  <div class="container mx-auto" transition:animate="slide">
     {
       listaCategoriaCortada.map((categoria) => {
         return <CategoriaProduto categoria={categoria} />;
@@ -33,3 +33,5 @@ const listaCategoriaCortada = listaCategoria.filter((c) => {
   </div>
   <div class="divider"></div>
 </Layout>
+
+<script></script>

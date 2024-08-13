@@ -14,7 +14,7 @@ const listaProdutosCategoria = await pb.collection("produtos").getList(1, 4, {
 const listaProduto = listaProdutosCategoria.items;
 ---
 
-<div class="flex flex-col py-8 px-4 lg:px-0 space-y-8">
+<section class="flex flex-col py-8 px-4 lg:px-0 space-y-8" id="categoria">
   <div class="flex gap-4 items-center lg:justify-start justify-center">
     <img
       src={categoria.icon.src}
@@ -25,7 +25,7 @@ const listaProduto = listaProdutosCategoria.items;
       {categoria.titulo}
     </h2>
   </div>
-  <div class="space-y-8 flex flex-col">
+  <section class="space-y-8 flex flex-col">
     <div class="grid sm:grid-cols-2 xl:grid-cols-4">
       {
         listaProduto.map((produto) => (
@@ -46,6 +46,6 @@ const listaProduto = listaProdutosCategoria.items;
     >
       Veja a lista completa
     </a>
-  </div>
+  </section>
   <div class="divider"></div>
-</div>
+</section>
