@@ -1,0 +1,17 @@
+---
+import CardCategoria from "@components/CardCategoria.astro";
+
+import listaCategoria from "@data/categoria";
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
+  {
+    listaCategoria.map((categoria) => (
+      <CardCategoria
+        title={categoria.titulo}
+        iconUrl={categoria.icon}
+        description={categoria.titulo}
+      />
+    ))
+  }
+</div>

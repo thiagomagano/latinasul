@@ -1,6 +1,7 @@
 ---
 import CardCategoria from "../CardCategoria.astro";
 import listaCategoria from "@data/categoria";
+import ListaCartegoria from "./ListaCartegoria.astro";
 ---
 
 <section class="w-full lg:py-24 py-12 px-4">
@@ -28,12 +29,6 @@ import listaCategoria from "@data/categoria";
       </div>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
-      {
-        listaCategoria.map((categoria) => (
-          <CardCategoria title={categoria.titulo} iconUrl={categoria.icon} />
-        ))
-      }
-    </div>
+    <ListaCartegoria />
   </div>
 </section>

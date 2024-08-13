@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CardCategoria from "../components/CardCategoria.astro";
 
 import listaCategoria from "@data/categoria";
 import CategoriaProduto from "../components/sections/CategoriaProduto.astro";
+import ListaCartegoria from "../components/sections/ListaCartegoria.astro";
 
 const listaCategoriaCortada = listaCategoria.filter((c) => {
   return c.titulo !== "Peixes";
@@ -18,26 +18,18 @@ const listaCategoriaCortada = listaCategoria.filter((c) => {
       </h1>
     </div>
 
-    <div class="container mx-auto">
-      <div
-        class="grid grid-cols-2 lg:grid-cols-4 gap-1 -mt-28 xl:px-80 lg:px-4"
-      >
-        {
-          listaCategoria.map((categoria) => (
-            <CardCategoria
-              title={categoria.titulo}
-              iconUrl={categoria.icon}
-              description={categoria.titulo}
-            />
-          ))
-        }
-      </div>
-
-      {
-        listaCategoriaCortada.map((categoria) => {
-          return <CategoriaProduto categoria={categoria} />;
-        })
-      }
+    <div
+      class="container mx-auto -mt-28 lg:px-4 flex justify-center items-center"
+    >
+      <ListaCartegoria />
     </div>
   </section>
+  <div class="container mx-auto">
+    {
+      listaCategoriaCortada.map((categoria) => {
+        return <CategoriaProduto categoria={categoria} />;
+      })
+    }
+  </div>
+  <div class="divider"></div>
 </Layout>
