@@ -19,11 +19,11 @@ const listaVantagens: cardVantagemProps[] = [
   },
   {
     iconUrl: iconCaixa,
-    description: "Possuimos um espaço amplo para armazenamento",
+    description: "Possuímos um espaço amplo para armazenamento",
   },
   {
     iconUrl: iconFolha,
-    description: "Contribuimos para a preservação do meio ambiente",
+    description: "Contribuímos para a preservação do meio ambiente",
   },
 ];
 
