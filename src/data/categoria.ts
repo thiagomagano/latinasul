@@ -1,7 +1,7 @@
 import iconBovino from "@assets/svg/categorias/bovinos.svg";
 import iconFrango from "@assets/svg/categorias/aves.svg";
 import iconOvino from "@assets/svg/categorias/cordeiros.svg";
-import iconSuino from "@assets/svg/categorias/suinos.svg";
+import iconSuino from "@assets/svg/categorias/suínos.svg";
 import iconPeixe from "@assets/svg/categorias/peixes.svg";
 import iconVegetais from "@assets/svg/categorias/vegetais.svg";
 import iconQueijos from "@assets/svg/categorias/queijos.svg";
@@ -22,7 +22,7 @@ const listaCategoria: categoria[] = [
     icon: iconOvino,
   },
   {
-    titulo: "Suinos",
+    titulo: "Suínos",
     icon: iconSuino,
   },
   {

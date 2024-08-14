@@ -23,16 +23,19 @@ let icon = pb.files.getUrl(record.expand.categoria, record.expand.categoria.icon
       
     {ref && <p class="text-secondary flex flex-col justify-between items-cente text-nowrap gap-y-4"> <img src={icon} alt="Icon" class="size-10  bg-primary p-1 bg-transparent rounded-full border border-1 border-secondary mb-1"> {ref}</p>}
   </div>
-  <figure class="w-[240px] h-[320px] overflow-hidden col-span-2">
-    <Image
-      src={url}
-      alt={`imagem de ${titulo}`}
-      class="w-full h-full object-contain"
-      width={240}
-      height={320}
-      loading="lazy"
-    />
-  </figure>
+  
+      <figure class="w-[240px] h-[320px] overflow-hidden col-span-2">
+        <Image
+        src={url}
+        alt={`imagem de ${titulo}`}
+        class="w-full h-full object-contain"
+        width={240}
+        height={320}
+        loading="lazy"
+        />
+      </figure>
+   
+
   <!-- Canto superior esquerdo -->
   <div class="absolute top-0 left-0 w-8 h-8 bg-white"></div>
   <!-- Canto superior direito -->
