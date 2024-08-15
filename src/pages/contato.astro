@@ -20,7 +20,7 @@ const empresa = "Latina Sul";
         <h2 class="text-2xl font-semibold mb-4 text-primary">
           Formulário de Contato
         </h2>
-        <form>
+        <form action="/actions/send-email" method="post">
           <div class="mb-4">
             <label for="nome" class="block text-gray-700 font-bold mb-2"
               >Nome:</label
@@ -29,6 +29,7 @@ const empresa = "Latina Sul";
               type="text"
               id="nome"
               name="nome"
+              required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -40,6 +41,7 @@ const empresa = "Latina Sul";
               type="email"
               id="email"
               name="email"
+              required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -50,6 +52,7 @@ const empresa = "Latina Sul";
             <textarea
               id="mensagem"
               name="mensagem"
+              required
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             ></textarea>
           </div>
