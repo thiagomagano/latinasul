@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const email = formData.get("email") as string | null;
   const mensagem = formData.get("mensagem") as string | null;
 
-  const to = "othymag@gmail.com";
+  const to = "latinasul1@gmail.com";
   const subject = `${nome} enviou uma mensagem via site da latina sul`;
 
   // Throw an error if we're missing any of the needed fields.
