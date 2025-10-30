@@ -4,8 +4,15 @@ import { Image } from "astro:assets";
 import pb from "@lib/pocketbase";
 const { id, titulo, ref, imagem, categoria, record } = Astro.props;
 
-let url = pb.files.getUrl(record, imagem, { thumb: "600x0" });
+import placeholder from "@assets/placeholder-image.png"
+
+let url: (string |ImageMetadata)= pb.files.getUrl(record, imagem, { thumb: "600x0" });
 let icon = pb.files.getUrl(record.expand.categoria, record.expand.categoria.icon)
+
+
+if (!url) {
+  url = placeholder
+}
 
 
 
@@ -78,8 +85,6 @@ let icon = pb.files.getUrl(record.expand.categoria, record.expand.categoria.icon
   <div class="absolute bottom-0 right-0 w-8 h-8 bg-white"></div>
 </div>
 )
-
-
 }
 
 
